@@ -1,0 +1,12 @@
+import React from "react";
+import GoogleSignIn from "../components/GoogleSignIn";
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Welcome to 1ClikFix</h1>
+      <p>Book trusted handymen in just one click.</p>
+      <GoogleSignIn />
+    </div>
+  );
+}
