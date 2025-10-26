@@ -1,4 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Navbar({ user, onLogout }) {
+  return (
+    <header className="bg-gradient-to-r from-primary to-[#00a3ff] text-white">
+      <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <div className="flex items-center space-x-3">
+          <div className="text-2xl font-extrabold">1ClikFix</div>
+          <div className="text-xs opacity-80">Fast • Reliable • Local</div>
+        </div>
+
+        <nav className="flex items-center gap-4">
+          <Link className="hover:underline" to="/">Home</Link>
+          <Link className="hover:underline" to="/jobs">Book</Link>
+          <Link className="hover:underline" to="/calendar">Calendar</Link>
+          {user ? (
+            <button onClick={onLogout} className="bg-white text-primary px-3 py-1 rounded font-semibold">Logout</button>
+          ) : (
+            <Link to="/login" className="bg-white text-primary px-3 py-1 rounded font-semibold">Sign in</Link>
+          )}
+        </nav>
+      </div>
+    </header>
+  );
+} React from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { app } from "../firebaseConfig";
 
