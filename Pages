@@ -1,4 +1,24 @@
 import React from "react";
+import { useAuth } from "../utils/auth"; // if you use auth module
+export default function Login() {
+  const { loginWithGoogle } = useAuth();
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h2 className="text-xl font-bold mb-4">Sign in to 1ClikFix</h2>
+        <p className="text-sm text-gray-600 mb-6">Use Google to sign in quickly.</p>
+        <button
+          onClick={loginWithGoogle}
+          className="w-full inline-flex items-center justify-center gap-3 border rounded-lg py-2 px-3 hover:shadow"
+        >
+          <img src="/src/assets/google.svg" alt="Google" className="h-5" />
+          <span className="font-medium">Continue with Google</span>
+        </button>
+      </div>
+    </div>
+  );
+} React from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
