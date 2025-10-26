@@ -9,4 +9,14 @@ export default function Home() {
       <GoogleSignIn />
     </div>
   );
+}import React from "react";
+import BookingForm from "../components/BookingForm";
+
+export default function Jobs() {
+  return (
+    <div>
+      <h2>Book a Handyman</h2>
+      <BookingForm />
+    </div>
+  );
 }
