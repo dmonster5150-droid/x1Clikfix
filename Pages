@@ -19,4 +19,13 @@ export default function Jobs() {
       <BookingForm />
     </div>
   );
+}import React from "react";
+
+export default function Profile() {
+  return (
+    <div>
+      <h2>Your Profile</h2>
+      <p>View or manage your bookings here.</p>
+    </div>
+  );
 }
