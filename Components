@@ -17,4 +17,26 @@ export default function GoogleSignIn() {
   };
 
   return <button onClick={handleGoogleSignIn}>Sign in with Google</button>;
+}import React, { useState } from "react";
+
+export default function BookingForm() {
+  const [jobType, setJobType] = useState("");
+  const [date, setDate] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Job booked: ${jobType} on ${date}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Job Type:</label>
+      <input value={jobType} onChange={(e) => setJobType(e.target.value)} required />
+
+      <label>Date:</label>
+      <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+
+      <button type="submit">Book Now</button>
+    </form>
+  );
 }
